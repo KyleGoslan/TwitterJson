@@ -52,7 +52,7 @@ public extension TwitterJSON {
     public class func postTweet(text: String, completion: (success: Bool) -> Void) {
         let apiURL = "https://api.twitter.com/1.1/statuses/update.json"
         let parameters = [
-            "status" : text.stringByReplacingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+            "status" : text.stringByRemovingPercentEncoding!
         ]
         TwitterJSON.makeRequest(.POST, parameters: parameters, apiURL: apiURL) { success, _ in
             dispatch_async(dispatch_get_main_queue(),{
