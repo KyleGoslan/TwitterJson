@@ -11,8 +11,8 @@ import Foundation
 extension String {
     
     func urlEncode() -> (String) {
-        var raw: NSString = self
-        var str = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,raw,"[].",":/?&=;+!@#$()',*",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) as! String
+        let raw: NSString = self
+        let str = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,raw,"[].",":/?&=;+!@#$()',*",CFStringConvertNSStringEncodingToEncoding(NSUTF8StringEncoding)) as String
         return str
     }
     

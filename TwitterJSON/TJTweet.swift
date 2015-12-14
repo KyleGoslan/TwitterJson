@@ -67,7 +67,7 @@ public class TJTweet {
             self.id = id
         }
         
-        if let user = tweetInfo["user"].dictionary {
+        if let _ = tweetInfo["user"].dictionary {
             self.user = TJUser(userInfo: tweetInfo["user"])
         }
         
